@@ -1,0 +1,384 @@
+/* ============================================
+   VARIABLES CSS - :root
+   ============================================ */
+
+:root {
+    /* Colores primarios */
+    --color-primario: #667eea;
+    --color-acento: #764ba2;
+    --color-fondo: #f4f4f4;
+    --color-texto: #333;
+    --color-texto-claro: #666;
+    --color-blanco: #ffffff;
+    
+    /* Bordes */
+    --border-radius: 10px;
+    --border-radius-pequeño: 5px;
+    
+    /* Sombras */
+    --sombra-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --sombra-medium: 0 4px 12px rgba(0, 0, 0, 0.2);
+    
+    /* Espaciado */
+    --espaciado: 20px;
+}
+
+/* ============================================
+   RESET UNIVERSAL - BOX-SIZING
+   ============================================ */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+/* ============================================
+   HEADER - POSITION: RELATIVE
+   ============================================ */
+
+header {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-acento) 100%);
+    color: var(--color-blanco);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: var(--sombra-medium);
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Elemento absoluto dentro de header relativo */
+header::after {
+    content: "🎵";
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    opacity: 0.3;
+}
+
+header p {
+    font-size: 1.2em;
+    font-style: italic;
+    opacity: 0.95;
+}
+
+/* ============================================
+   NAV - POSITION: FIXED
+   ============================================ */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-acento) 100%);
+    box-shadow: var(--sombra-medium);
+    z-index: 1000;
+    padding: 15px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--espaciado);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: var(--border-radius-pequeño);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   AJUSTE PARA NAV FIJO
+   ============================================ */
+
+body {
+    padding-top: 60px;
+}
+
+/* ============================================
+   MAIN - CONTENIDO PRINCIPAL
+   ============================================ */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--espaciado);
+    max-width: 1200px;
+    margin: var(--espaciado) auto;
+    padding: 0 var(--espaciado);
+}
+
+/* ============================================
+   SECTIONS - MAIN
+   ============================================ */
+
+section {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--color-primario);
+    box-shadow: var(--sombra-light);
+    margin-bottom: var(--espaciado);
+}
+
+section h2 {
+    color: var(--color-primario);
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-acento);
+    padding-bottom: 10px;
+}
+
+section p {
+    color: var(--color-texto-claro);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+section ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+section li {
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--color-primario);
+    border-radius: var(--border-radius-pequeño);
+    transition: all 0.3s ease;
+}
+
+section li:hover {
+    background-color: #eeebf5;
+    transform: translateX(5px);
+    border-left-color: var(--color-acento);
+}
+
+/* ============================================
+   ASIDE - POSITION: STICKY
+   ============================================ */
+
+aside {
+    position: sticky;
+    top: 100px;
+    background-color: var(--color-blanco);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--color-primario);
+    box-shadow: var(--sombra-light);
+    height: fit-content;
+}
+
+aside h3 {
+    color: var(--color-primario);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-acento);
+    padding-bottom: 10px;
+}
+
+aside ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+aside li {
+    background-color: #f9f9f9;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: var(--border-radius-pequeño);
+    border-left: 3px solid var(--color-primario);
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+}
+
+aside li:hover {
+    background-color: #eeebf5;
+    transform: translateX(3px);
+    border-left-color: var(--color-acento);
+}
+
+/* ============================================
+   FORMULARIO
+   ============================================ */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: var(--color-primario);
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius-pequeño);
+    font-size: 1em;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    background-color: #f9f9f9;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+    border-color: var(--color-acento);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+button {
+    padding: 12px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--border-radius-pequeño);
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-acento) 100%);
+    color: var(--color-blanco);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-medium);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background-color: #2c3e50;
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   RESPONSIVE - TABLETS
+   ============================================ */
+
+@media (max-width: 768px) {
+    nav ul {
+        gap: 10px;
+    }
+    
+    nav a {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    aside {
+        position: static;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    section h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MÓVILES
+   ============================================ */
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    nav {
+        padding: 10px 15px;
+    }
+    
+    nav ul {
+        gap: 5px;
+    }
+    
+    nav a {
+        font-size: 0.85em;
+        padding: 5px 10px;
+    }
+    
+    section {
+        padding: 15px;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
